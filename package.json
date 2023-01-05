@@ -5,6 +5,7 @@
   "main": ".eleventy.js",
   "dependencies": {
     "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-navigation": "^0.1.6",
     "tailwindcss": "^3.2.4",
     "postcss": "^8.4.19"
   },
@@ -14,7 +15,6 @@
     "serve": "eleventy --serve",
     "bw": "tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css --watch",
     "build:prod": "eleventy && tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css --minify"
-
   },
   "repository": {
     "type": "git",
