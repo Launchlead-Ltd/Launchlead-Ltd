@@ -1,10 +1,7 @@
-module.exports = function (eleventyConfig) {
-  eleventyConfig.addWatchTarget("./src/sass/");
+module.exports = function(eleventyConfig) {
+    // Input Directory : src Output directory: _site
 
-  return {
-    dir: {
-      input: "src",
-      output: "public",
-    },
-  };
+    return {
+        dir: { input: 'src', output: '_site' }
+    };
 };
