@@ -5,32 +5,38 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
     <style>
       .gradient {
-        background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+        background: linear-gradient(90deg, #ff5a0b 0%, #ffad00 100%);
       }
     </style>
   </head>
 
-  <body class="leading-normal tracking-normal text-white h-14 bg-gradient-to-r from-cyan-500 to-blue-500" style="font-family: 'Source Sans Pro', sans-serif;">
+  <body class="leading-normal tracking-normal text-white h-14 bg-gradient-to-r to-cyan-500 from-launchlead-blue" style="font-family: 'Source Sans Pro', sans-serif;">
     {% include "../components/navigation.njk" %}
-          <main class="">
+    <main class="">
 
       {{ content | safe }}
-      </main>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
       var scrollpos = window.scrollY;
       var header = document.getElementById("header");
       var navcontent = document.getElementById("nav-content");
       var navaction = document.getElementById("navAction");
+      var navlogoWhite = document.getElementById("navLogoWhite");
+      var navlogoBlue = document.getElementById("navLogoBlue");
       var brandname = document.getElementById("brandname");
       var toToggle = document.querySelectorAll(".toggleColour");
 
       document.addEventListener("scroll", function () {
-        /*Apply classes for slide in bar*/
+        /* Apply classes for slide in bar */
         scrollpos = window.scrollY;
 
         if (scrollpos > 10) {
           header.classList.add("bg-white");
+          navlogoBlue.classList.remove("hidden");
+          navlogoBlue.classList.add("block");
+          navlogoWhite.classList.add("hidden");
+          navlogoWhite.classList.remove("block");
           navaction.classList.remove("bg-white");
           navaction.classList.add("gradient");
           navaction.classList.remove("text-gray-800");
@@ -44,6 +50,11 @@
           navcontent.classList.remove("bg-gray-100");
           navcontent.classList.add("bg-white");
         } else {
+          navlogoBlue.classList.add("hidden");
+          navlogoBlue.classList.remove("block");
+          navlogoWhite.classList.remove("hidden");
+          navlogoWhite.classList.add("block");
+          navlogoBlue.classList.add("hidden");
           header.classList.remove("bg-white");
           navaction.classList.remove("gradient");
           navaction.classList.add("bg-white");
@@ -62,8 +73,8 @@
       });
     </script>
     <script>
-      /*Toggle dropdown list*/
-      /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+      /* Toggle dropdown list */
+      /* https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8 */
 
       var navMenuDiv = document.getElementById("nav-content");
       var navMenu = document.getElementById("nav-toggle");
@@ -78,13 +89,19 @@
           if (checkParent(target, navMenu)) {
             // click on the link
             if (navMenuDiv.classList.contains("hidden")) {
-              navMenuDiv.classList.remove("hidden");
+              navMenuDiv
+                .classList
+                .remove("hidden");
             } else {
-              navMenuDiv.classList.add("hidden");
+              navMenuDiv
+                .classList
+                .add("hidden");
             }
           } else {
             // click both outside link and outside menu, hide menu
-            navMenuDiv.classList.add("hidden");
+            navMenuDiv
+              .classList
+              .add("hidden");
           }
         }
       }

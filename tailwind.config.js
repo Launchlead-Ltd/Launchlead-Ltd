@@ -1,13 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./_site/**/*.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug}",
-    "./src/_includes/**/*.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug}",
-    "./src/pages/**/*.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug}",
-    "./src/index.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug}",
+    "./_site/**/*.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug,jpg,gif}",
+    "./src/_includes/**/*.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug,jpg,gif}",
+    "./src/img/**/*.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug,jpg,gif}",
+    "./src/pages/**/*.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug,jpg,gif}",
+    "./src/index.{html,md,11ty.js,liquid,njk,hbs,mustache,ejs,haml,pug,jpg,gif}",
   ],
+
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'launchlead-blue': '#2e77ff',
+      },
+    }
   },
-  plugins: [],
+
+  plugins: [
+  ],
 }
