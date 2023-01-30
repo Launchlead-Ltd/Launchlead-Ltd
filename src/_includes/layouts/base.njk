@@ -12,11 +12,13 @@
 
   <body class="leading-normal tracking-normal text-white h-14 bg-gradient-to-r to-cyan-500 from-launchlead-blue" style="font-family: 'Source Sans Pro', sans-serif;">
     {% include "../components/navigation.njk" %}
-    <main class="">
+      <main class="">
+        {{ content | safe }}
+      </main>
+     {% include "../components/footer.njk" %}
 
-      {{ content | safe }}
-    </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script>
       var scrollpos = window.scrollY;
       var header = document.getElementById("header");
@@ -72,10 +74,8 @@
         }
       });
     </script>
-    <script>
-      /* Toggle dropdown list */
-      /* https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8 */
 
+    <script>
       var navMenuDiv = document.getElementById("nav-content");
       var navMenu = document.getElementById("nav-toggle");
 
@@ -105,6 +105,7 @@
           }
         }
       }
+
       function checkParent(t, elm) {
         while (t.parentNode) {
           if (t == elm) {
@@ -114,7 +115,7 @@
         }
         return false;
       }
-    </script>
 
+    </script>
   </body>
 </html>
