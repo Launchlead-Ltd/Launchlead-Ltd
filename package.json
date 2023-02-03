@@ -13,6 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "s": "eleventy --serve",
     "serve": "eleventy --serve",
+    "tw": "concurrently \"npm run s\" \"npm run bw\"",
     "bw": "tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css --watch",
     "build:prod": "eleventy && tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css --minify"
   },

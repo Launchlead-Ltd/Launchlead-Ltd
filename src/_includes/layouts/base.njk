@@ -38,7 +38,8 @@
       var navlogoBlue = document.getElementById("navLogoBlue");
       var brandname = document.getElementById("brandname");
       var toToggle = document.querySelectorAll(".toggleColour");
-
+      var navMenu = document.getElementById("nav-toggle");
+      var navLinks = document.querySelectorAll(".navLinksClass");
       document.addEventListener("scroll", function () {
         /* Apply classes for slide in bar */
         scrollpos = window.scrollY;
@@ -51,11 +52,17 @@
           navlogoWhite.classList.remove("block");
           navaction.classList.remove("bg-white");
           navaction.classList.add("gradient");
-          navaction.classList.remove("text-gray-800");
-          navaction.classList.add("text-white");
+          navaction.classList.remove("text-gray-600");
+          navMenu.classList.remove("text-white");
+          navMenu.classList.remove("lg:text-white");
+          navMenu.classList.add("text-gray-600");
+          navLinks.forEach(el => {
+            el.classList.remove("lg:text-white");
+            el.classList.add("text-gray-600");
+          });
           //Use to switch toggleColour colours
           for (var i = 0; i < toToggle.length; i++) {
-            toToggle[i].classList.add("text-gray-800");
+            toToggle[i].classList.add("text-gray-600");
             toToggle[i].classList.remove("text-white");
           }
           header.classList.add("shadow");
@@ -71,11 +78,18 @@
           navaction.classList.remove("gradient");
           navaction.classList.add("bg-white");
           navaction.classList.remove("text-white");
-          navaction.classList.add("text-gray-800");
+          navaction.classList.add("text-gray-600");
+          navMenu.classList.add("text-white");
+          navMenu.classList.add("lg:text-white");
+          navMenu.classList.remove("text-gray-600");
+          navLinks.forEach(el => {
+            el.classList.add("lg:text-white");
+          });
+
           //Use to switch toggleColour colours
           for (var i = 0; i < toToggle.length; i++) {
             toToggle[i].classList.add("text-white");
-            toToggle[i].classList.remove("text-gray-800");
+            toToggle[i].classList.remove("text-gray-600");
           }
 
           header.classList.remove("shadow");
@@ -102,10 +116,13 @@
               navMenuDiv
                 .classList
                 .remove("hidden");
+                navMenu.innerText = 'Close';
             } else {
               navMenuDiv
                 .classList
                 .add("hidden");
+                navMenu.innerText = 'Menu';
+              
             }
           } else {
             // click both outside link and outside menu, hide menu
