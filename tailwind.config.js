@@ -12,6 +12,8 @@ module.exports = {
     extend: {
       colors: {
         'launchlead-blue': '#2e77ff',
+        'launchlead-gradient-from': '#001464',
+        'launchlead-gradient-to': '#1e38a3',
       },
     }
   },

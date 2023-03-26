@@ -7,6 +7,8 @@ module.exports = function(eleventyConfig) {
     // eleventyConfig.addPassthroughCopy("**/*.jpg");
     // eleventyConfig.addPassthroughCopy("**/*.gif");
 
+    // Copy `img/favicon/` to `_site/`
+    eleventyConfig.addPassthroughCopy({ "src/img/favicon": "/" });
     return {
         dir: { input: 'src', output: '_site' }
     };
